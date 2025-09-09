@@ -8,5 +8,9 @@ A very simple to learn programming language
 * loop - used to execute a line a given number of times
 * store - used to store text or numbers to memory
 * read - used to retrieve test or numbers from memory
+* add - used to add two numbers
+* diff - used to subtract two numbers
+* mul - used to multiply as many numbers as you want :D
+* div - used to divide two numbers
 
  ### if anyone wants to help me in the development please let me know in github issues
