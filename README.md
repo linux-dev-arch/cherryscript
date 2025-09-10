@@ -20,9 +20,9 @@ A very simple to learn programming language
 <p>run the following command in the terminal(linux) or command prompt(windows)
 <p>For windows
 <p>python3.exe cherryscript.py "your program.cheri"
-<p>DONT PUT "" IN THE COMMAND!!!
+<p>DONT PUT " " IN THE COMMAND!!!
 
 <p>For linux
 <p>python3 cherryscript.py "your program.cheri"
-<p>AGAIN DONT PUT"" IN THE COMMAND!!!
+<p>AGAIN DONT PUT" " IN THE COMMAND!!!
 
