@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import linecache ,sys
-mem=[]
+var=[]#list to store variables
+val=[]#list to store variable values
 x = 1
 File = sys.argv[1]
 def tokeniser(file,line):
@@ -27,12 +28,6 @@ def compute(tokens):
                         a=tokeniser(File,int(tokens[1]))
                         compute(a)
                         count+= 1
-        elif tokens[0] == "store":
-                mem.append(tokens[1])
-                print("stored at index:",mem.index(tokens[1]))
-        elif tokens[0] == "read":
-                index = int(tokens[1])
-                print(mem[index])
         elif tokens[0] == "add":
                 if 3<len(tokens):
                             print("Error:Can only add two numbers!!!!")
@@ -57,7 +52,21 @@ def compute(tokens):
                 for i in range(2,len(tokens)):
                         temp = temp * eval(tokens[i])
                 print(temp)
+        elif tokens[0] == "var":
+                if tokens[1].startswith("$"):
+                        var.append(tokens[1])
+                        if len(tokens) == 3:
+                                val.append(tokens[2])#assign a value if there is a value after the variable name
+                        else:
+                                val.append(0)
+                else:
+                        print("Error:variable should start with '$' !!!!!")
+        elif tokens[0] == "assign":
+                if tokens[1] in var:
+                        indx=var.index(tokens[1])
+                        val[indx]=tokens[2]
 while True:
         token = tokeniser(File,x)
         compute(token)
         x +=1
+        #print(var,val,sep="\n") just for debugging variable implementation :)
