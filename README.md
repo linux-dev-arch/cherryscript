@@ -12,7 +12,7 @@ A very simple to learn programming language
 * div - used to divide two numbers
 * var - used to create a variable
 * assign - used to assign or change a variable value
-
+* inc - used to increment an integer variable
  ### if anyone wants to help me in the development please let me know in github issues
 ## How to use
 <p>To run a .cheri file just download the interpreter i.e cherryscript.py.
@@ -20,9 +20,11 @@ A very simple to learn programming language
 <p>run the following command in the terminal(linux) or command prompt(windows)
 <p>For windows
 <p>python3.exe cherryscript.py "your program.cheri"
-<p>DONT PUT " " IN THE COMMAND!!!
-
+<p>without quotes of course</p>
 <p>For linux
 <p>python3 cherryscript.py "your program.cheri"
-<p>AGAIN DONT PUT" " IN THE COMMAND!!!
-
+<p>without quotes of course</p>
+## General instructions
+<p> Variables always start with a '$'</p>
+<p> Dont forget to specify int for numbers or str for words
+<p>loop can be used to run lines after 'end'</p>
