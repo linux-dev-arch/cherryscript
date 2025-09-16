@@ -1,0 +1,3 @@
+loop 3 100
+end
+print hello world
