@@ -14,7 +14,9 @@ def tokeniser(file,line):
 
 def compute(tokens):
         if tokens == []:
-                pass#do nothing :)
+                pass#do nothing for blank line :)
+        elif tokens[0] =="//":
+                pass#do nothing for comments
         elif tokens[0] == "print":
                 for i in range(1,len(tokens)):
                         if tokens[i] in strvar:
