@@ -26,6 +26,7 @@ A very simple to learn programming language
 <p>without quotes of course</p>
  
  ## General instructions
+<p> You can use '// ' for comments
 <p> Variables always start with a '$'</p>
 <p> Dont forget to specify int for numbers or str for words
 <p> You can store the result of a math command in a variable by putting a variable's name after it
