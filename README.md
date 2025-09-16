@@ -8,7 +8,7 @@ A very simple to learn programming language
 * loop - used to execute a line a given number of times
 * add - used to add two numbers
 * diff - used to subtract two numbers
-* mul - used to multiply as many numbers as you want :D
+* mul - used to multiply two values
 * div - used to divide two numbers
 * var - used to create a variable
 * assign - used to assign or change a variable value
@@ -27,4 +27,5 @@ A very simple to learn programming language
 ## General instructions
 <p> Variables always start with a '$'</p>
 <p> Dont forget to specify int for numbers or str for words
+<p> You can store the result of a math command in a variable by putting a variable's name after it
 <p>loop can be used to run lines after 'end'</p>
