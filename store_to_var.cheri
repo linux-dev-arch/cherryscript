@@ -1,0 +1,4 @@
+var int $sum
+add 2 2 $sum
+print $sum
+end
