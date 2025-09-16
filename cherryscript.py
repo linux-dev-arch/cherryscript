@@ -41,11 +41,10 @@ def compute(tokens):
                 if len(tokens) > 3:
                         if tokens[3] in intvar:
                                 temp=eval(tokens[1])+eval(tokens[2])
-                                print(temp)
                                 indx = intvar.index(tokens[3])
                                 intval[indx]=temp
                         else:
-                                print("ERROR:UNKNOW VARIABLE!")
+                                print("ERROR:UNKNOWN VARIABLE!")
                 else:
                         temp=eval(tokens[1])+eval(tokens[2])
                         print(temp)
@@ -53,11 +52,10 @@ def compute(tokens):
                 if len(tokens) > 3:
                         if tokens[3] in intvar:
                                 temp=eval(tokens[1])-eval(tokens[2])
-                                print(temp)
                                 indx = intvar.index(tokens[3])
                                 intval[indx]=temp
                         else:
-                                print("ERROR:UNKNOW VARIABLE!")
+                                print("ERROR:UNKNOWN VARIABLE!")
                 else:
                         temp=eval(tokens[1])-eval(tokens[2])
                         print(temp)
@@ -65,11 +63,10 @@ def compute(tokens):
                 if len(tokens) > 3:
                         if tokens[3] in intvar:
                                 temp=eval(tokens[1])/eval(tokens[2])
-                                print(temp)
                                 indx = intvar.index(tokens[3])
                                 intval[indx]=temp
                         else:
-                                print("ERROR:UNKNOW VARIABLE!")
+                                print("ERROR:UNKNOWN VARIABLE!")
                 else:
                         temp=eval(tokens[1])/eval(tokens[2])
                         print(temp)
@@ -77,11 +74,10 @@ def compute(tokens):
                 if len(tokens) > 3:
                         if tokens[3] in intvar:
                                 temp=eval(tokens[1])*eval(tokens[2])
-                                print(temp)
                                 indx = intvar.index(tokens[3])
                                 intval[indx]=temp
                         else:
-                                print("ERROR:UNKNOW VARIABLE!")
+                                print("ERROR:UNKNOWN VARIABLE!")
                 else:
                         temp=eval(tokens[1])*eval(tokens[2])
                         print(temp)
@@ -101,9 +97,11 @@ def compute(tokens):
                                         strval.append('')
                         else:
                                 print("Error:Unkown data type please check your code :(")
+                                exit()
 
                 else:
                         print("Error:variable should start with '$' !!!!!")
+                        exit()
         elif tokens[0] == "assign":
                 if tokens[1] in intvar:
                         indx=intvar.index(tokens[1])
@@ -114,12 +112,14 @@ def compute(tokens):
                                 strval[indx]+=tokens[i]
                 else:
                         print("Error:Variable not found!!!!")
+                        exit()
         elif tokens[0] == "inc":
                 if tokens[1] in intvar:
                         indx=intvar.index(tokens[1])
                         intval[indx]+=eval(tokens[2])
                 else:
                         print("ERROR:Variable not found")
+                        exit()
 while True:
         token = tokeniser(File,x)
         compute(token)
