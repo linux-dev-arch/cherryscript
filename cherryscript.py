@@ -112,6 +112,9 @@ def compute(tokens):
                         indx=strvar.index(tokens[1])
                         for i in range(2,len(tokens)):
                                 strval[indx]+=tokens[i]
+                                strval[indx]+=' '
+                                string=strval[indx]
+                        strval[indx] = string.rstrip(' ')
                 else:
                         print("Error:Variable not found!!!!")
                         exit()
@@ -126,4 +129,4 @@ while True:
         token = tokeniser(File,x)
         compute(token)
         x +=1
-        #print(intvar,intval,sep="\n") #just for debugging variable implementation :)
+        #print(strvar,strval,sep="\n") #just for debugging variable implementation :)
