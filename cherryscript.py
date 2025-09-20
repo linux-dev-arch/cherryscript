@@ -35,10 +35,14 @@ def compute(tokens):
                 compute(a)
         elif tokens[0] == "loop":
                 count = 1
-                while count <= int(tokens[2]):
-                        a=tokeniser(File,int(tokens[1]))
-                        compute(a)
-                        count+= 1
+                while count <= int(tokens[3]):
+                        start_line=int(tokens[1])
+                        line_num=int(tokens[2])-int(tokens[1])
+                        end_line=int(tokens[1])+line_num
+                        for i in range(start_line,end_line+1):
+                                tok=tokeniser(File,i)
+                                compute(tok)
+                        count +=1
         elif tokens[0] == "add":
                 if len(tokens) > 3:
                         if tokens[3] in intvar:
@@ -88,7 +92,7 @@ def compute(tokens):
                         if tokens[1] == "int":
                                 intvar.append(tokens[2])
                                 if len(tokens)==4:
-                                        intval.append(tokens[3])
+                                        intval.append(int(tokens[3]))
                                 else:
                                         intval.append(0)
                         elif tokens[1] == "str":
@@ -129,4 +133,5 @@ while True:
         token = tokeniser(File,x)
         compute(token)
         x +=1
-        #print(strvar,strval,sep="\n") #just for debugging variable implementation :)
+        #print(intvar,intval,sep="\n") #just for debugging int variable implementation :)
+        #print(strvar,strval,sep="\n") #just for debugging str variable implementation :)
