@@ -14,7 +14,7 @@
 
 <p>loop 3 3 10
 <p>end
-<p>print cherry script
+<p>print cherry script</p>
 <p>
 <p>The syntax can be checked from the keywords section</p>
 
@@ -34,3 +34,13 @@
 ### end
 <p>This keyword is used to end the main section of your cherryscript program</p>
 <p>If you do forget,the interpreter will freak out and you can only exit using ctrl+c</p>
+
+### var
+<p>This keyword is used to initialise a variable.</p>
+<p>For example you can use this to initialise an integer.</p>
+<p>var int $variable</p>
+<p>Note:The default value for integers is 0</p>
+<p>You can initialise a variable and give it a value using</p>
+<p>var int $variable 54</p>
+<p></p>
+<p>Here, the variable $variable was initalised and given a value 54</p>
