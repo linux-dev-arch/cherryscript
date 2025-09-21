@@ -97,8 +97,13 @@ def compute(tokens):
                                         intval.append(0)
                         elif tokens[1] == "str":
                                 strvar.append(tokens[2])
-                                if len(tokens)==4:
-                                        strval.append(tokens[3])
+                                if len(tokens)>=3:
+                                        strval.append('')
+                                        indx=strvar.index(tokens[2])
+                                        for i in range(3,len(tokens)):
+                                                strval[indx]+=tokens[i]+' '
+                                        string=strval[indx]
+                                        strval[indx]=string.rstrip()
                                 else:
                                         strval.append('')
                         else:
