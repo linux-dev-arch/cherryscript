@@ -46,5 +46,6 @@
 <p>var int $variable 54</p>
 <p></p>
 <p>Here, the variable $variable was initalised and given a value 54</p>
+
 #### string
 <p>You can initialise a new string variable by using:</p>
