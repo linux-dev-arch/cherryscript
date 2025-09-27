@@ -138,7 +138,7 @@ def compute(tokens):
                         exit()
         elif tokens[0] =="start":
                 start =True
-                print(start)
+                #print(start)
 while True:
         token = tokeniser(File,x)
         compute(token)
