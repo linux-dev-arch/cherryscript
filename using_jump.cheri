@@ -1,5 +1,0 @@
-print this is cherryscript
-jump 5
-print and continue back here
-end
-print it jumped to this statement
