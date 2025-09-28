@@ -4,6 +4,7 @@ intvar=[]#list to store variables
 intval=[]#list to store variable values
 strvar=[]
 strval=[]
+import_file=""
 start=False
 x = 1
 File = sys.argv[1]
@@ -15,6 +16,7 @@ def tokeniser(file,line):
 
 def compute(tokens):
         global start
+        global import_file
         if tokens == []:
                 pass#do nothing for blank line :)
         elif tokens[0] =="//":
@@ -139,6 +141,23 @@ def compute(tokens):
         elif tokens[0] =="start":
                 start =True
                 #print(start)
+        elif tokens[0] == "import":
+                import_file = tokens[1]
+        elif tokens[0] == "run" and start == True:
+                imp_token= tokeniser(import_file,int(tokens[1]))
+                compute(imp_token)
+        elif tokens[0] == "input":
+                if tokens[1] in intvar:
+                        indx = intvar.index(tokens[1])
+                        for i in range(2,len(tokens)):
+                                print(tokens[i],end = " ")
+                        intval[indx]=eval(input())
+                if tokens[1] in strvar:
+                        indx = strvar.index(tokens[1])
+                        for i in range(2,len(tokens)):
+                                print(tokens[i],end = " ")
+                                strin = input()
+                        strval[indx]=strin.rstrip()
 while True:
         token = tokeniser(File,x)
         compute(token)
