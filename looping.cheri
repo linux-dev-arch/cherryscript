@@ -1,4 +1,0 @@
-loop 3 4 100
-end
-print hello world
-print im using loop
