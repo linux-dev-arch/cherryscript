@@ -6,7 +6,8 @@ A very simple to learn programming language
 ## current progress
 * print - used to display text(no need for double quotes or paranthesis)
 * jump - used to execute a line.
-* end - used to end a .cheri file (this is required)
+* start - used to begin main block of code (this is required)
+* end - used to end the main block of code (this is required)
 * loop - used to execute a line a given number of times
 * add - used to add two numbers
 * diff - used to subtract two numbers
