@@ -10,22 +10,26 @@ A very simple to learn programming language
 * end - used to end the main block of code (this is required)
 * loop - used to execute a line a given number of times
 * add - used to add two numbers
-* diff - used to subtract two numbers
+* sub - used to subtract two numbers
 * mul - used to multiply two values
 * div - used to divide two numbers
 * var - used to create a variable
 * assign - used to assign or change a variable value
 * inc - used to increment an integer variable
+* import - used to import a file (still in testing!)
+* run - used to run a line in an imported file (still in testing)
+* input - used to recive data from the user
+* labels - it is equivalent to a python function
  ### if anyone wants to help me in the development please let me know in github issues
  ## How to use
 <p>To run a .ci file just download the interpreter i.e cherryscript.py.
 <p>make a .ci file in the same folder as the interpreter
 <p>run the following command in the terminal(linux) or command prompt(windows)
 <p>For windows
-<p>python3.exe cherryscript.py "your program.cheri"
+<p>python3.exe cherryscript.py "your program.ci"
 <p>without quotes of course</p>
 <p>For linux
-<p>python3 cherryscript.py "your program.cheri"
+<p>python3 cherryscript.py "your program.ci"
 <p>without quotes of course</p>
  
  ## General instructions
