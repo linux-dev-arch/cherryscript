@@ -1,3 +1,5 @@
+
+![alt text](https://github.com/linux-dev-arch/cherryscript/blob/main/cherrys.png)
 # cherryscript
 A very simple to learn programming language
 ### Note this is just a proof of concept.A fun hobby if you will :D
