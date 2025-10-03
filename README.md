@@ -93,7 +93,7 @@ A very simple to learn programming language
 <p>inc *variable name* *value*</p>
 <p>note that value should always be an integer</p>
 
-### NOTE:The following features are still in the works
+### NOTE:The following features are still in development
 
 ### import
 
