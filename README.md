@@ -16,7 +16,7 @@ A very simple to learn programming language
 * assign - used to assign or change a variable value
 * inc - used to increment an integer variable
 * import - used to import a file (still in testing!)
-* run - used to run a line in an imported file (still in testing)
+* exec - used to run a line in an imported file (still in testing)
 * input - used to recive data from the user
 * labels - it is equivalent to a python function
  ### if anyone wants to help me in the development please let me know in github issues
@@ -64,3 +64,58 @@ A very simple to learn programming language
 <p>add *first number* *second number* *variable(optional)*</p>
 <p>if variable is not given then the result is printed by default</p>
 <p>if variable is given then the result is stored in it</p>
+
+### sub
+<p> sub *first number* *second number* *variable(optional)*</p>
+<p>if variable is not given then the result is printed </p>
+<p>if variable is given then the result is stored in it</p>
+
+### mul
+<p>mul *first number* *second number* *optional variable*</p>
+<p>similar to add and sub but it does multiplication</p>
+
+### div
+<p>dv *first number* *second number* *optional variable*</p>
+<p>similar to add , sub and mul bit does division</p>
+
+### var
+<p>var *variable type* *variable name* *(optional)value*</p>
+<p>variable type has two values str for string and int for integer</p>
+<p>variable names should always start with a $</p>
+<p>for example $num</p>
+
+### assign
+<p>used to assign a value to a variable during execution</p>
+<p>assign *variable name* *value*</p>
+
+### inc
+<p>used to increment an integer type variable by a specified value</p>
+<p>inc *variable name* *value*</p>
+<p>note that value should always be an integer</p>
+
+### NOTE:The following features are still in the works
+
+### import
+
+<p>used to import a .ci file</p>
+<p>import *file name*</p>
+
+### exec
+<p>used to run a line in an imported file</p>
+<p>exec *line number*</p>
+
+### labels
+
+#### initalisation
+<p>lables are like the cherryscript equivalent of functions</p>
+<p>you can declare a new label before start</p>
+<p>the synatx is as below</p>
+<p>:lable_name</p>
+<p>your code</p>
+<p>;</p>
+<p></p>
+<p>every lable is ended with a ;</p>
+
+#### executing a lable
+<p>any label can be executed by just writing the label name without : in between start and end </p>
+<p>or executed using either loop or jump</p>
