@@ -1,6 +1,5 @@
 # cherryscript
 A very simple to learn programming language
-<p>Note:choose cherryscript-rolling to try out the latest features</p>
 ![alt text](https://github.com/linux-dev-arch/cherryscript/blob/main/cherry-script.png)
 ### Note this is just a proof of concept.A fun hobby if you will :D
 ## current progress
@@ -38,7 +37,7 @@ A very simple to learn programming language
 <p> Dont forget to specify int for numbers or str for words
 <p> You can store the result of a math command in a variable by putting a variable's name after it
 <p>loop can be used to run lines after 'end'</p>
-
+<p>Note:choose cherryscript-rolling to try out the latest features</p>
 ## Syntax
 
 ### print
