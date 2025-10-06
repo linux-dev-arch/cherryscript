@@ -150,7 +150,7 @@ def compute(tokens):
                 #print(x)
         elif tokens[0] == "import":
                 import_file = tokens[1]
-        elif tokens[0] == "run" and start == True:
+        elif tokens[0] == "exec" and start == True:
                 imp_token= tokeniser(import_file,int(tokens[1]))
                 compute(imp_token)
         elif tokens[0] == "input" and start == True:
@@ -182,15 +182,19 @@ def compute(tokens):
                         else:
                                 i +=1
                         tokn.clear()
-        elif tokens[0] in lables:
+        elif tokens[0] in lables and start == True:
                 indx = lables.index(tokens[0])
                 for i in range(lables_startline[indx],lables_endline[indx]):
                         temp = tokeniser(File,i)
                         compute(temp)
 
 while True:
-        token = tokeniser(File,x)
-        compute(token)
-        x +=1
-        #print(intvar,intval,sep="\n") #just for debugging int variable implementation :)
-        #print(strvar,strval,sep="\n") #just for debugging str variable implementation :)
+        if ".ci" in File:
+                token = tokeniser(File,x)
+                compute(token)
+                x +=1
+                #print(intvar,intval,sep="\n") #just for debugging int variable implementation :)
+                #print(strvar,strval,sep="\n") #just for debugging str variable implementation :)
+        else:
+                print("Error:File not a cherryscript file(.ci)")
+                break
