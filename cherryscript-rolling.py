@@ -22,7 +22,7 @@ def compute(tokens):
         global import_file
         if tokens == []:
                 pass#do nothing for blank line :)
-        elif tokens[0] =="//":
+        elif "//" in tokens[0]:
                 pass#do nothing for comments
         elif tokens[0] == "print" and start == True:
                 for i in range(1,len(tokens)):
@@ -38,8 +38,16 @@ def compute(tokens):
         elif tokens[0] == "end":
                 exit()
         elif tokens[0] == "jump" and start == True:
-                a=tokeniser(File,int(tokens[1]))
-                compute(a)
+                if tokens[1].isdigit():
+                        a=tokeniser(File,int(tokens[1]))
+                        compute(a)
+                elif token[1] in lables:
+                        indx = lables.index(tokens[1])
+                        for i in range(lables_startline[indx],lables_endline[indx]):
+                                temp = tokeniser(File,i)
+                                compute(temp)
+
+
         elif tokens[0] == "loop" and start == True:
                 count = 1
                 while count <= int(tokens[3]):
