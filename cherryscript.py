@@ -2,6 +2,8 @@
 import linecache ,sys
 intvar=[]#list to store variables
 intval=[]#list to store variable values
+floatval=[]
+floatvar=[]
 strvar=[]
 strval=[]
 lables=[]
@@ -32,6 +34,9 @@ def compute(tokens):
                         elif tokens[i] in intvar:
                                 indx = intvar.index(tokens[i])
                                 print(intval[indx],end="")
+                        elif tokens[i] in floatvar:
+                                indx = floatvar.index(tokens[i])
+                                print(floatval[indx],end="")
                         else:
                                 print(tokens[i],end=" ")
                 print()
@@ -84,10 +89,10 @@ def compute(tokens):
                         print(temp)
         elif tokens[0] == "div" and start == True:
                 if len(tokens) > 3:
-                        if tokens[3] in intvar:
+                        if tokens[3] in floatvar:
                                 temp=eval(tokens[1])/eval(tokens[2])
-                                indx = intvar.index(tokens[3])
-                                intval[indx]=temp
+                                indx = floatvar.index(tokens[3])
+                                floatval[indx]=temp
                         else:
                                 print("ERROR:UNKNOWN VARIABLE! line:",x)
                                 exit()
@@ -125,6 +130,12 @@ def compute(tokens):
                                         strval[indx]=string.rstrip()
                                 else:
                                         strval.append('')
+                        elif tokens[1] == "float":
+                                floatvar.append(tokens[2])
+                                if len(tokens)==4:
+                                        floatval.append(float(tokens[3]))
+                                else:
+                                        floatval.append(0.0)
                         else:
                                 print("Error:Unkown data type please check your code :( line:",x)
                                 exit()
