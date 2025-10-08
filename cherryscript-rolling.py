@@ -206,7 +206,32 @@ def compute(tokens):
                 for i in range(lables_startline[indx],lables_endline[indx]):
                         temp = tokeniser(File,i)
                         compute(temp)
+        elif tokens[0] =="cjump":
+                if tokens[2] == ">":
+                        if eval(tokens[1]) > eval(tokens[3]):
+                                if tokens[4].isdigit():
+                                        a=tokeniser(File,int(tokens[4]))
+                                        compute(a)
+                        elif token[4] in lables:
+                                indx = lables.index(tokens[4])
+                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                        temp = tokeniser(File,i)
+                                        compute(temp)
+                        else:
+                                pass
 
+                if tokens[2] == "<":
+                        if eval(tokens[1]) < eval(tokens[3]):
+                                if tokens[4].isdigit():
+                                        a=tokeniser(File,int(tokens[4]))
+                                        compute(a)
+                        elif token[4] in lables:
+                                indx = lables.index(tokens[4])
+                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                        temp = tokeniser(File,i)
+                                        compute(temp)
+                        else:
+                                pass
 while True:
         if ".ci" in File:
                 token = tokeniser(File,x)
