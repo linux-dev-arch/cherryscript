@@ -33,14 +33,14 @@ def compute(tokens):
                                 print(strval[indx],end="")
                         elif tokens[i] in intvar:
                                 indx = intvar.index(tokens[i])
-                                print(intval[indx],end="")
+                                print(intval[indx],end=" ")
                         elif tokens[i] in floatvar:
                                 indx = floatvar.index(tokens[i])
-                                print(floatval[indx],end="")
+                                print(floatval[indx],end=" ")
                         else:
                                 print(tokens[i],end=" ")
                 print()
-        elif tokens[0] == "end":
+        elif tokens[0] == "end" and start==True:
                 exit()
         elif tokens[0] == "jump" and start == True:
                 if tokens[1].isdigit():
@@ -177,13 +177,12 @@ def compute(tokens):
                         indx = intvar.index(tokens[1])
                         for i in range(2,len(tokens)):
                                 print(tokens[i],end = " ")
-                        intval[indx]=eval(input())
-                if tokens[1] in strvar:
-                        indx = strvar.index(tokens[1])
+                        intval[indx]=int(input())
+                if tokens[1] in floatvar:
+                        indx = floatvar.index(tokens[1])
                         for i in range(2,len(tokens)):
                                 print(tokens[i],end = " ")
-                                strin = input()
-                        strval[indx]=strin.rstrip()
+                        floatval[indx]=float(input())
         elif tokens[0].startswith(":"):
                 lable=tokens[0].lstrip(":")
                 lables.append(lable)
@@ -208,30 +207,85 @@ def compute(tokens):
                         compute(temp)
         elif tokens[0] =="cjump":
                 if tokens[2] == ">":
-                        if eval(tokens[1]) > eval(tokens[3]):
-                                if tokens[4].isdigit():
-                                        a=tokeniser(File,int(tokens[4]))
-                                        compute(a)
-                        elif token[4] in lables:
-                                indx = lables.index(tokens[4])
-                                for i in range(lables_startline[indx],lables_endline[indx]):
-                                        temp = tokeniser(File,i)
-                                        compute(temp)
-                        else:
-                                pass
+                        if tokens[1].isdigit():
+                                if eval(tokens[1]) > eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
+                        elif tokens[1] in intvar:
+                                indx = intvar.index(tokens[1])
+                                if intval[indx] > eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
+                        elif tokens[1] in floatvar:
+                                indx = floatvar.index(tokens[1])
+                                if floatval[indx] > eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
+
 
                 if tokens[2] == "<":
-                        if eval(tokens[1]) < eval(tokens[3]):
-                                if tokens[4].isdigit():
-                                        a=tokeniser(File,int(tokens[4]))
-                                        compute(a)
-                        elif token[4] in lables:
-                                indx = lables.index(tokens[4])
-                                for i in range(lables_startline[indx],lables_endline[indx]):
-                                        temp = tokeniser(File,i)
-                                        compute(temp)
-                        else:
-                                pass
+                        if tokens[1].isdigit():
+                                if eval(tokens[1]) < eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
+                        elif tokens[1] in intvar:
+                                indx = intvar.index(tokens[1])
+                                if intval[indx] < eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
+                        elif tokens[1] in floatvar:
+                                indx = floatvar.index(tokens[1])
+                                if floatval[indx] < eval(tokens[3]):
+                                        if tokens[4].isdigit():
+                                                a=tokeniser(File,int(tokens[4]))
+                                                compute(a)
+                                        elif token[4] in lables:
+                                                indx = lables.index(tokens[4])
+                                                for i in range(lables_startline[indx],lables_endline[indx]):
+                                                        temp = tokeniser(File,i)
+                                                        compute(temp)
+                                else:
+                                        pass
 while True:
         if ".ci" in File:
                 token = tokeniser(File,x)
