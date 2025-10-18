@@ -19,6 +19,8 @@ A very simple to learn programming language
 * exec - used to run a line in an imported file (still in testing)
 * input - used to recive data from the user
 * labels - it is equivalent to a python function
+* sleep - used to delay execution for a given time (in seconds)
+* loopf - used to create a forever loop.
  ### if anyone wants to help me in the development please let me know in github issues
  ## How to use
 <p>To run a .ci file just download the interpreter i.e cherryscript.py.
@@ -93,6 +95,12 @@ A very simple to learn programming language
 <p>inc *variable name* *value*</p>
 <p>note that value should always be an integer</p>
 
+### sleep
+<p>used to add delay</p>
+<p>sleep *time*</p>
+
+### loopf
+<p>used to create a forever loop </p>
 ### NOTE:The following features are still in development
 
 ### import
