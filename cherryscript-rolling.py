@@ -327,6 +327,14 @@ def compute(tokens):
                                         pass
         elif tokens[0] == "sleep":
                 time.sleep(eval(tokens[1]))
+        elif tokens[0] == "loopf":
+                start_line=int(tokens[1])
+                line_num=int(tokens[2])-int(tokens[1])
+                end_line=int(tokens[1])+line_num
+                while True:
+                        for i in range(start_line,end_line+1):
+                                tok=tokeniser(File,i)
+                                compute(tok)
 while True:
         if ".ci" in File:
                 token = tokeniser(File,x)
