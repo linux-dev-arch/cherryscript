@@ -11,8 +11,19 @@ lables_startline=[]
 lables_endline=[]
 import_file=""
 start=False
+chelp=False
 x = 1
-File = sys.argv[1]
+def chhelp():
+        print("""       Hey there seems like your new to cherryscript.\n
+        To run a cherryscript file all you need to do is to put the \n
+        name of the file like this python3 cherryscript-rolling.py <file name>
+        also dont put any < >. :)\n
+        if you need help about the syntax, check out the github repo""")
+if len(sys.argv)<2:
+        chhelp()
+        chelp=True
+else:
+        File = sys.argv[1]
 def tokeniser(file,line):
         text=linecache.getline(file,line)
         text=text.strip()
@@ -41,7 +52,7 @@ def compute(tokens):
                                 print(tokens[i],end=" ")
                 print()
         elif tokens[0] == "end" and start==True:
-                exit()
+                sys.exit()
         elif tokens[0] == "jump" and start == True:
                 if tokens[1].isdigit():
                         a=tokeniser(File,int(tokens[1]))
@@ -71,7 +82,7 @@ def compute(tokens):
                                 intval[indx]=temp
                         else:
                                 print("ERROR:UNKNOWN VARIABLE! line:",x)
-                                exit()
+                                sys.exit()
                 else:
                         temp=eval(tokens[1])+eval(tokens[2])
                         print(temp)
@@ -83,7 +94,7 @@ def compute(tokens):
                                 intval[indx]=temp
                         else:
                                 print("ERROR:UNKNOWN VARIABLE! line:",x)
-                                exit()
+                                sys.exit()
                 else:
                         temp=eval(tokens[1])-eval(tokens[2])
                         print(temp)
@@ -95,7 +106,7 @@ def compute(tokens):
                                 floatval[indx]=temp
                         else:
                                 print("ERROR:UNKNOWN VARIABLE! line:",x)
-                                exit()
+                                sys.exit()
                 else:
                         temp=eval(tokens[1])/eval(tokens[2])
                         print(temp)
@@ -107,7 +118,7 @@ def compute(tokens):
                                 intval[indx]=temp
                         else:
                                 print("ERROR:UNKNOWN VARIABLE! line:",x)
-                                exit()
+                                sys.exit()
                 else:
                         temp=eval(tokens[1])*eval(tokens[2])
                         print(temp)
@@ -138,11 +149,11 @@ def compute(tokens):
                                         floatval.append(0.0)
                         else:
                                 print("Error:Unkown data type please check your code :( line:",x)
-                                exit()
+                                sys.exit()
 
                 else:
                         print("Error:variable should start with '$' !!!!! line:",x)
-                        exit()
+                        sys.exit()
         elif tokens[0] == "assign":
                 if tokens[1] in intvar:
                         indx=intvar.index(tokens[1])
@@ -156,14 +167,14 @@ def compute(tokens):
                         strval[indx] = string.rstrip(' ')
                 else:
                         print("Error:Variable not found!!!! line:",x)
-                        exit()
+                        sys.exit()
         elif tokens[0] == "inc":
                 if tokens[1] in intvar:
                         indx=intvar.index(tokens[1])
                         intval[indx]+=eval(tokens[2])
                 else:
                         print("ERROR:Variable not found! line:",x)
-                        exit()
+                        sys.exit()
         elif tokens[0] =="start":
                 start =True
                 #print(x)
@@ -335,7 +346,7 @@ def compute(tokens):
                         for i in range(start_line,end_line+1):
                                 tok=tokeniser(File,i)
                                 compute(tok)
-while True:
+while not chelp :
         if ".ci" in File:
                 token = tokeniser(File,x)
                 compute(token)
