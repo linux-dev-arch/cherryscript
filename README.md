@@ -3,6 +3,7 @@ A very simple to learn programming language
 <!---![alt text](https://github.com/linux-dev-arch/cherryscript/blob/main/cherry-script.png)-->
 ### Note this is just a proof of concept.A fun hobby if you will :D
 <p>you can download the windows .exe file in the releases page if your system does not have python installed</p>
+
 ## current progress
 * print - used to display text(no need for double quotes or paranthesis)
 * jump - used to execute a line.
