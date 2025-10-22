@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import linecache ,sys,time
+import linecache ,sys,time,random
 intvar=[]#list to store variables
 intval=[]#list to store variable values
 floatval=[]
@@ -346,6 +346,10 @@ def compute(tokens):
                         for i in range(start_line,end_line+1):
                                 tok=tokeniser(File,i)
                                 compute(tok)
+        elif tokens[0] == "random":
+                if tokens[2] in intvar:
+                        indx = intvar.index(tokens[2])
+                        intval[indx]=random.randint(0,int(tokens[1]))
 while not chelp :
         if ".ci" in File:
                 token = tokeniser(File,x)
