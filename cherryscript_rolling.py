@@ -216,7 +216,7 @@ def compute(tokens):
                 for i in range(lables_startline[indx],lables_endline[indx]):
                         temp = tokeniser(File,i)
                         compute(temp)
-        elif tokens[0] =="cjump":
+        elif tokens[0] =="cjump" and start == True:
                 if tokens[2] == ">":
                         if tokens[1].isdigit():
                                 if eval(tokens[1]) > eval(tokens[3]):
@@ -336,9 +336,9 @@ def compute(tokens):
                                                         compute(temp)
                                 else:
                                         pass
-        elif tokens[0] == "sleep":
+        elif tokens[0] == "sleep" and start ==True:
                 time.sleep(eval(tokens[1]))
-        elif tokens[0] == "loopf":
+        elif tokens[0] == "loopf" and start == True:
                 start_line=int(tokens[1])
                 line_num=int(tokens[2])-int(tokens[1])
                 end_line=int(tokens[1])+line_num
@@ -346,10 +346,37 @@ def compute(tokens):
                         for i in range(start_line,end_line+1):
                                 tok=tokeniser(File,i)
                                 compute(tok)
-        elif tokens[0] == "random":
+        elif tokens[0] == "random" and start == True:
                 if tokens[2] in intvar:
                         indx = intvar.index(tokens[2])
                         intval[indx]=random.randint(0,int(tokens[1]))
+        elif tokens[0] == "file" and start==True:
+                if tokens[1] == "read":
+                        with open(tokens[2],"r") as f:
+                                if len(tokens) > 3:
+                                        if tokens[3] in strvar:
+                                                indx = strvar.index(tokens[3])
+                                                for i in f.readlines():
+                                                        strval[indx]+=i
+                                else:
+                                        for i in f.readlines():
+                                                print(i.strip())
+                if tokens[1] == "write":
+                        with open(tokens[2],"w") as f:
+                                if tokens[3] in strvar:
+                                        indx = strvar.index(tokens[3])
+                                        f.write(strval[indx])
+                                else:
+                                        for i in range(3,len(tokens)):
+                                                f.write(tokens[i])
+                if tokens[1] == "append":
+                        with open(tokens[2],"a") as f:
+                                if tokens[3] in strvar:
+                                        indx = strvar.index(tokens[3])
+                                        f.write(strval[indx])
+                                else:
+                                        for i in range(3,len(tokens)):
+                                                f.write(tokens[i])
 while not chelp :
         if ".ci" in File:
                 token = tokeniser(File,x)
